@@ -15,4 +15,10 @@ The available commands and their functionalities include:
 **Key Features**:  
 **Argparse Subcommands**: Each operation has its own command, making it easy to manage multiple cryptographic tasks from the command line.  
 **Password-based Encryption**: Uses PBKDF2 with a random salt to derive encryption keys securely from passwords.  
-**Error Handling**: Includes error messages for cases like missing keys, incorrect passwords, and pre-encrypted files.  
+**Error Handling**: Includes error messages for cases like missing keys, incorrect passwords, and pre-encrypted files.
+
+**N.B**  
+**file_crypt** allows multiple encryptions of a file as long as a different key is used each time (e.g., secret.key1, secret.key2, secret.key3).  It is therefore not possible to encrypt a file twice with the same key.  For **decryption**, follow the reverse sequence (e.g., file_crypt secret.key1 - secret.key2 → decrypt secret.key2 - secret.key1).
+
+
+As for **crypt_with_pass**, it is possible to encrypt the same file multiple times with the same password. If different passwords are used, follow the reverse sequence for decryption (as explained above).
